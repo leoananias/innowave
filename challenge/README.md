@@ -12,5 +12,13 @@
 * Lombok
 * H2
 
+### Links ###
+
+* [SWAGGER - Challenge API](http://localhost:8080/swagger-ui/index.html#)
+
+* [H2 - Challenge API](http://localhost:8080/h2-console)
+
+* [GIT - Challenge API](https://github.com/leoananias/innowave.git)
+
 
 
