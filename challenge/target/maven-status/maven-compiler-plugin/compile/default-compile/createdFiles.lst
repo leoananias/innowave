@@ -1,0 +1,9 @@
+com/innowave/chalenge/controller/ChannelController.class
+com/innowave/chalenge/dto/ProgramDto.class
+com/innowave/chalenge/dto/ChannelDto.class
+com/innowave/chalenge/repository/ChannelRepository.class
+com/innowave/chalenge/controller/ProgramController.class
+com/innowave/chalenge/service/ChannelService.class
+com/innowave/chalenge/entity/Channel.class
+com/innowave/chalenge/entity/Program.class
+com/innowave/chalenge/ChalengeApplication.class

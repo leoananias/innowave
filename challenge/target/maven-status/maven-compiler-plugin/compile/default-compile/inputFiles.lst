@@ -1,0 +1,9 @@
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/controller/ChannelController.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/dto/ChannelDto.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/ChalengeApplication.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/dto/ProgramDto.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/entity/Channel.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/repository/ChannelRepository.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/controller/ProgramController.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/entity/Program.java
+/Users/leonardofelippe/willWorspace/chalenge/src/main/java/com/innowave/chalenge/service/ChannelService.java
