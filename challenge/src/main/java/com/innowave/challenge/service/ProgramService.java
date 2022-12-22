@@ -1,6 +1,6 @@
 package com.innowave.challenge.service;
 
-import com.innowave.challenge.dto.ProgramDto;
+import com.innowave.challenge.dto.CreateProgramDto;
 import com.innowave.challenge.entity.Program;
 import com.innowave.challenge.entity.Channel;
 import com.innowave.challenge.repository.ProgramRepository;
@@ -18,18 +18,18 @@ public class ProgramService {
     @Autowired
     private ProgramRepository programRepository;
 
-    public String createProgram(ProgramDto programDto){
+    public String createProgram(CreateProgramDto createProgramDto){
 
         Channel channel = new Channel();
 
-        channel.setId(programDto.getChannelId());
+        channel.setId(createProgramDto.getChannelId());
 
-        Program program = new Program(programDto.getDescription(),
-                                    programDto.getEndtime(),
-                                    programDto.getImageUrl(),
-                                    programDto.getStartTime(),
-                                    programDto.getTitle(),
-                                    channel);
+        Program program = new Program(createProgramDto.getDescription(),
+                createProgramDto.getEndtime(),
+                createProgramDto.getImageUrl(),
+                createProgramDto.getStartTime(),
+                createProgramDto.getTitle(),
+                channel);
 
         return programRepository.save(program).getId();
     }

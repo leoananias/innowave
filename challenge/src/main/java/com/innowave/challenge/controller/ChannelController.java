@@ -2,6 +2,7 @@ package com.innowave.challenge.controller;
 
 
 import com.innowave.challenge.dto.ChannelDto;
+import com.innowave.challenge.dto.CreateChannelDto;
 import com.innowave.challenge.entity.Channel;
 import com.innowave.challenge.service.ChannelService;
 import io.swagger.annotations.Api;
@@ -27,9 +28,9 @@ public class ChannelController {
 
 	@ApiOperation("Create Channel")
 	@PostMapping("/create")
-	public ResponseEntity<String> createChannel(@RequestBody ChannelDto channelDto) {
+	public ResponseEntity<String> createChannel(@RequestBody CreateChannelDto createChannelDto) {
 		try {
-			String _id = channelService.createChannel(covertToEntity(channelDto));
+			String _id = channelService.createChannel(convertToEntity(createChannelDto));
 			return new ResponseEntity<>(_id, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -56,8 +57,8 @@ public class ChannelController {
 		return modelMapper.map(channel, ChannelDto.class);
 	}
 
-	private Channel covertToEntity(ChannelDto channelDto){
-		return modelMapper.map(channelDto, Channel.class);
+	private Channel convertToEntity(CreateChannelDto createChannelDto){
+		return modelMapper.map(createChannelDto, Channel.class);
 	}
 
 }

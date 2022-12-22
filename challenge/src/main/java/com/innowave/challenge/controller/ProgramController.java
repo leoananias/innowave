@@ -1,5 +1,6 @@
 package com.innowave.challenge.controller;
 
+import com.innowave.challenge.dto.CreateProgramDto;
 import com.innowave.challenge.dto.ProgramDto;
 import com.innowave.challenge.entity.Program;
 import com.innowave.challenge.service.ProgramService;
@@ -25,9 +26,9 @@ public class ProgramController {
 
 	@ApiOperation("Create Program")
 	@PostMapping("/create")
-	public ResponseEntity<String> createProgram(@RequestBody ProgramDto programDto) {
+	public ResponseEntity<String> createProgram(@RequestBody CreateProgramDto createProgramDto) {
 		try {
-			String _id = programService.createProgram(programDto);
+			String _id = programService.createProgram(createProgramDto);
 			return new ResponseEntity<>(_id, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -79,7 +80,7 @@ public class ProgramController {
 	@PutMapping  ("/{id}")
 	public ResponseEntity<ProgramDto> updateProgramById(@RequestBody ProgramDto programDto) {
 		try {
-			Program _program = programService.updateProgram(convertToEntity(programDto));
+			Program _program = programService.updateProgram(convertToEntityUpdate(programDto));
 
 			return new ResponseEntity<>(convertToDto(_program), HttpStatus.OK);
 		} catch (Exception e) {
@@ -91,7 +92,11 @@ public class ProgramController {
 		return modelMapper.map(program, ProgramDto.class);
 	}
 
-	private Program convertToEntity(ProgramDto programDto){
+	private Program convertToEntity(CreateProgramDto createProgramDto){
+		return modelMapper.map(createProgramDto, Program.class);
+	}
+
+	private Program convertToEntityUpdate(ProgramDto programDto){
 		return modelMapper.map(programDto, Program.class);
 	}
 
